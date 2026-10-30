@@ -11,32 +11,30 @@ else:
 print("Total Electricity Bill: Rs.", bill)
 ## flow diagram 
 ``` mermaid
-[ START ]
-           │
-           ▼
-    [ Input: units ]
-           │
-           ▼
-     { units <= 100? }
-      /             \
-  (Yes)             (No)
-    /                 \
-   ▼                   ▼
-[ bill = units * 3 ]  { units <= 300? }
-   │                  /             \
-   │              (Yes)             (No)
-   │                /                 \
-   │               ▼                   ▼
-   │     [ bill = (100 * 3.0)  ]  [ bill = (100 * 3.0) + ]
-   │     [  + ((units - 100)   ]  [   (200 * 5.0) +      ]
-   │     [     * 5.0)          ]  [   ((units - 300)*8.0)]
-   │               \                   /
-   │                \                 /
-   └─────────────► [ MERGE ] ◄───────┘
-                       │
-                       ▼
-          [ Print Total Bill: Rs. bill ]
-                       │
-                       ▼
-                    [ STOP ]
+
+               START
+            |
+            v
+     Input units consumed
+            |
+            v
+       Is units <= 100?
+         /        \
+       YES         NO
+        |           |
+        v           v
+  bill = units*3  Is units <= 300?
+                    /       \
+                  YES        NO
+                   |          |
+                   v          v
+          bill = 300 +    bill = 300 +
+          (units-100)*5   1000 +
+                          (units-300)*8
+                   |          |
+                   v          v
+             Print Total Electricity Bill
+                       |
+                       v
+                      STOP
 ```
