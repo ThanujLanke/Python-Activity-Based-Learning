@@ -38,6 +38,5 @@ print("Total Electricity Bill: Rs.", bill)
           [ Print Total Bill: Rs. bill ]
                        │
                        ▼
-
-```
                     [ STOP ]
+```
