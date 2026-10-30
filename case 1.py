@@ -9,3 +9,35 @@ else:
     bill = (100 * 3.0) + (200 * 5.0) + ((units - 300) * 8.0)
 
 print("Total Electricity Bill: Rs.", bill)
+## flow diagram 
+``` mermaid
+[ START ]
+           │
+           ▼
+    [ Input: units ]
+           │
+           ▼
+     { units <= 100? }
+      /             \
+  (Yes)             (No)
+    /                 \
+   ▼                   ▼
+[ bill = units * 3 ]  { units <= 300? }
+   │                  /             \
+   │              (Yes)             (No)
+   │                /                 \
+   │               ▼                   ▼
+   │     [ bill = (100 * 3.0)  ]  [ bill = (100 * 3.0) + ]
+   │     [  + ((units - 100)   ]  [   (200 * 5.0) +      ]
+   │     [     * 5.0)          ]  [   ((units - 300)*8.0)]
+   │               \                   /
+   │                \                 /
+   └─────────────► [ MERGE ] ◄───────┘
+                       │
+                       ▼
+          [ Print Total Bill: Rs. bill ]
+                       │
+                       ▼
+
+```
+                    [ STOP ]
